@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import openai
 import cryptocode
 
@@ -18,4 +18,4 @@ def dall_e(prompt):
       size='1024x1024',
       n=1
     )
-    return response['data'][0]['url']
+    return render_template("index.html", image_url = response['data'][0]['url'])
