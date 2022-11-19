@@ -9,7 +9,8 @@ def index():
 
 @app.route("/<prompt>")
 def dall_e(prompt):
-    openai.api_key = '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'
+    ss = 'C9V0sXMQcUcG8fYF1/oW8xCpUbBdjmTjxXAEnDJ+33f/1VAvfvvnTT39AEvbr+tRO+0n*h0Nn04g9RXLyYAlSm7HbAA==*42GLI+/rI36BYed8H5990w==*lG/00+obfXnDThUy3UMQLQ=='
+    openai.api_key = cryptocode.decrypt(ss, "mypassword")
     response = openai.Image.create(
       model='image-alpha-001',
       prompt=prompt,
